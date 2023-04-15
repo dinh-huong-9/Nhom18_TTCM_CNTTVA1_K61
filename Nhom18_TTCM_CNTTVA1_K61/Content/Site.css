@@ -1,0 +1,200 @@
+﻿
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+/* footer */
+.footer {
+    margin-left: 60px;
+}
+.col-md-4 ul{
+    list-style:none;
+}
+.img_footer {
+    position: absolute;
+}
+/* banner */
+.banner1 {
+    position: relative;
+}
+.banner1 h2 {
+        position: absolute;
+        top:100px;
+        left:350px;
+     }
+    .banner1 p {
+        position: absolute;
+        top: 240px;
+        left: 350px;
+    }
+    .banner1 button {
+        position: absolute;
+        top: 300px;
+        left: 350px;
+        background-color: #9acd32;
+        width: 130px;
+        height: 40px;
+        border:none;
+    }
+    .banner2{
+        position:relative;
+    }
+.banner2 h2 {
+    position: absolute;
+    top: 100px;
+    left: 600px;
+}
+
+.banner2 p {
+    position: absolute;
+    top: 330px;
+    left: 270px;
+}
+
+.banner2 button {
+    position: absolute;
+    top: 450px;
+    left: 270px;
+    background-color: #9acd32;
+    width: 130px;
+    height: 40px;
+    border: none;
+}
+
+.banner3 {
+    position: relative;
+}
+.spnoibat h2, .nghenhan h2 {
+    margin-left: 600px;
+}
+/*---Css slider--*/
+
+.mySlides3 {
+    display: none;
+    margin-left:60px;
+}
+
+.display-container {
+    position: relative
+}
+
+/*---Css Nút qua lại---*/
+.image-button {
+    border: none;
+    display: inline-block;
+    padding: 10px;
+    height: 50px;
+    vertical-align: middle;
+    overflow: hidden;
+    color: #fff;
+    background: white;
+    position: absolute;
+    top: calc(50% - 25px);
+    opacity: 0.5;
+}
+
+    .image-button:hover {
+        color: #9acd32;
+        background: #9acd32;
+    }
+
+/*---Css Chấm tròn---*/
+.badge {
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 20px;
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+}
+
+.badge-white {
+    color: #9acd32 !important;
+    background-color: #9acd32 !important;
+
+}
+
+.image-badge {
+    display: inline-block;
+    border-radius: 50%;
+    height: 14px;
+    width: 14px;
+    border: 1px solid #9acd32;
+}
+
+    .image-badge:hover {
+        background: #fff;
+    }
+
+.nghenhan {
+    background-image: url('../Pictures/trang-chu/bannernghenhan.png');
+    width :1450px;
+    height:500px;
+}
+.row{
+    margin-left: 100px;
+    display:flex;
+    text-align:center;
+    justify-content:center;
+}
+.anhnn {
+    display: inline;
+    
+}
+.anhnn img {
+        width :180px;
+        height:180px;
+        margin-top:10px;
+        margin-left:2px;
+    }
+.banner4 img {
+    margin-left: 60px;
+}
+.banner4 {
+    position: relative;
+}
+
+    .banner4 h2 {
+        position: absolute;
+        top: 100px;
+        left: 600px;
+    }
+
+    .banner4 input {
+        position: absolute;
+        top: 150px;
+        left: 270px;
+        width:2000px;
+        border: 2px solid #9acd32;
+    }
+.banner4 button {
+    position: absolute;
+    top: 150px;
+    left: 700px;
+    background-color: #9acd32;
+    width: 130px;
+    height: 40px;
+    border: none;
+}

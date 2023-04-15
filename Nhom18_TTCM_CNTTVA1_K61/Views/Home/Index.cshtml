@@ -1,0 +1,149 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+
+    <div class="display-container">
+        <div class="banner1">
+            <img class="mySlides3" src="~/Pictures/trang-chu/banner.png" width="1450" height="550">
+            <h2>TRÀ ƯỚP SEN TÂY HỒ</h2>
+            <p>Sự hòa quyện tuyệt với giữa hương thơm ngan ngát của<br /> sen Bách diệp Hồ Tây và vị đậm trà của Tân Cương.</p>
+            <button>THỬ NGAY</button>
+        </div>
+        <div class="banner2">
+            <img class="mySlides3" src="~/Pictures/trang-chu/background2.png" width="1450" height="550">
+            <p>
+                Trà ướp Sen Bách Diệp- tinh hoa văn hóa Hà Thành là sự hòa quyện tuyệt vời <br />
+                giữa hương thơm ngan ngát của bông sen Bách Diệp Hồ Tây và vị đậm đà của trà <br />
+                Tân Cương Thái Nguyên. Qua đôi bàn tay tài hoa và bí quyết nghề mật truyền <br />
+                nhiều đời của người thợ trà Thăng Long,tạo ra thức quà tinh túy,kết tinh văn hóa <br />
+                ngàn năm Thăng Long - Hà Nội.
+            </p>
+            <button>ĐỌC THÊM</button>
+        </div>
+        <div class="banner2">
+            <p>
+                Trà ướp Sen Bách Diệp- tinh hoa văn hóa Hà Thành là sự hòa quyện tuyệt vời <br />
+                giữa hương thơm ngan ngát của bông sen Bách Diệp Hồ Tây và vị đậm đà của trà <br />
+                Tân Cương Thái Nguyên. Qua đôi bàn tay tài hoa và bí quyết nghề mật truyền <br />
+                nhiều đời của người thợ trà Thăng Long,tạo ra thức quà tinh túy,kết tinh văn hóa <br />
+                ngàn năm Thăng Long - Hà Nội.
+            </p>
+            <button>ĐỌC THÊM</button>
+            <img class="mySlides3" src="~/Pictures/trang-chu/bgSanpham.png" width="1450" height="550">
+        </div>
+
+        <div class="badge" style="background-color:white ">
+
+            <span class="image-badge" onclick="currentDiv(1)"></span>
+            <span class="image-badge" onclick="currentDiv(2)"></span>
+            <span class="image-badge" onclick="currentDiv(3)"></span>
+        </div>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides3");
+            var dots = document.getElementsByClassName("image-badge");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" badge-white", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " badge-white";
+        }
+    </script>
+</div>
+
+<div class="spnoibat">
+    <h2> SẢN PHẨM NỔI BẬT</h2>
+</div>
+<div style="margin-left: 60px" class="banner2">
+    <img src="~/Pictures/trang-chu/background2.png" width="1450" height="550" />
+    <h2>GIỚI THIỆU</h2>
+    <p>
+        Trà ướp Sen Bách Diệp- tinh hoa văn hóa Hà Thành là sự hòa quyện tuyệt vời <br />
+        giữa hương thơm ngan ngát của bông sen Bách Diệp Hồ Tây và vị đậm đà của trà <br />
+        Tân Cương Thái Nguyên. Qua đôi bàn tay tài hoa và bí quyết nghề mật truyền <br />
+        nhiều đời của người thợ trà Thăng Long,tạo ra thức quà tinh túy,kết tinh văn hóa <br />
+        ngàn năm Thăng Long - Hà Nội.
+    </p>
+    <button>ĐỌC THÊM</button>
+</div>
+<div style="margin-left: 60px" class="nghenhan">
+    <h2>NGHỆ NHÂN TRÀ ĐẠO</h2>
+    <div class="row">
+        <div class="anhnn">
+            <img src="~/Pictures/trang-chu/professional-tea-1.png" />
+            <h4>Nn. Nguyễn Cao Sơn</h4>
+            <p>
+                Nguyễn Cao Sơn được chọn làm đại <br />
+                diện quảng bá văn hổa Trà Việt tại <br />
+                ngôi nhà di sản 87 Ms Mây, Hà Nội.
+            </p>
+        </div>
+        <div class="anhnn">
+            <img src="~/Pictures/trang-chu/professional-tea-2.png" />
+            <h4>Nn. Hướng Anh Sướng</h4>
+            <p>
+                Nguyễn Cao Sơn được chọn làm đại <br />
+                diện quảng bá văn hổa Trà Việt tại <br />
+                ngôi nhà di sản 87 Ms Mây, Hà Nội.
+            </p>
+        </div>
+        <div class="anhnn">
+            <img src="~/Pictures/trang-chu/professional-tea-3.png" />
+            <h4>Nn. Nguyễn Cao Sơn</h4>
+            <p>
+                Nguyễn Cao Sơn được chọn làm đại <br />
+                diện quảng bá văn hổa Trà Việt tại <br />
+                ngôi nhà di sản 87 Ms Mây, Hà Nội.
+            </p>
+        </div>
+        <div class="anhnn">
+            <img src="~/Pictures/trang-chu/professional-tea-4.png" />
+            <h4>Nn. Nguyễn Cao Sơn</h4>
+            <p>
+                Nguyễn Cao Sơn được chọn làm đại <br />
+                diện quảng bá văn hổa Trà Việt tại <br />
+                ngôi nhà di sản 87 Ms Mây, Hà Nội.
+            </p>
+        </div>
+        <div class="anhnn">
+            <img src="~/Pictures/trang-chu/professional-tea-5.png" />
+            <h4>Nn. Nguyễn Cao Sơn</h4>
+            <p>
+                Nguyễn Cao Sơn được chọn làm đại <br />
+                diện quảng bá văn hổa Trà Việt tại <br />
+                ngôi nhà di sản 87 Ms Mây, Hà Nội.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="banner4">
+    <img src="~/Pictures/trang-chu/bannermuangay.png" width="1450" height="300" />
+    <h2>MUA NGAY</h2>
+    <input type="text" name="Số điện thoại/Email" />
+    <button type="submit">GỬI</button>
+</div>
+
+
+
