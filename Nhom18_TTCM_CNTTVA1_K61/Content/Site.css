@@ -1,4 +1,44 @@
-﻿
+﻿@import url('../slick/slick-theme.css');
+
+@font-face {
+    font-family: 'SVN-Athena_0';
+    src: url('../fonts/SVN-Athena_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SVN-Artful Beauty';
+    src: url('../fonts/SVN-Artful Beauty.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MULI-SEMIBOLD';
+    src: url('../fonts/MULI-SEMIBOLD.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'MULI-REGULAR';
+    src: url('../fonts/MULI-REGULAR.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'MULI-BOLD';
+    src: url('../fonts/MULI-BOLD.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'Gotham-Ultra';
+    src: url('../fonts/Gotham-Ultra.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Gotham-Thin';
+    src: url('../fonts/Gotham-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Gotham-Medium';
+    src: url('../fonts/Gotham-Medium.otf') format('opentype');
+}
 
 body {
     padding-top: 50px;
@@ -9,8 +49,8 @@ body {
 .body-content {
     padding-left: 0px;
     padding-right: 0px;
+    font-family: Gotham-Thin;
 }
-
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -28,26 +68,56 @@ textarea {
 .footer {
     margin-left: 60px;
 }
-.col-md-4 ul{
-    list-style:none;
+
+.col-md-3 ul {
+    list-style: none;
 }
+
+.col-md-3 i {
+    margin-left: 40px;
+}
+
 .img_footer {
     position: absolute;
 }
+/*NAV*/
+
+.nav-stacked li {
+    color: #f1f1f1;
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: -5px;
+}
+
+.nav-stacked a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+    .nav-stacked a:hover {
+        background: #F1F1F1;
+        color: #333;
+    }
 /* banner */
 .banner1 {
     position: relative;
 }
-.banner1 h2 {
+
+    .banner1 h2 {
         position: absolute;
-        top:100px;
-        left:350px;
-     }
+        top: 100px;
+        left: 350px;
+    }
+
     .banner1 p {
         position: absolute;
         top: 240px;
         left: 350px;
     }
+
     .banner1 button {
         position: absolute;
         top: 300px;
@@ -55,44 +125,55 @@ textarea {
         background-color: #9acd32;
         width: 130px;
         height: 40px;
-        border:none;
+        border: none;
+        color: black;
     }
-    .banner2{
-        position:relative;
-    }
-.banner2 h2 {
-    position: absolute;
-    top: 100px;
-    left: 600px;
+
+.banner2 {
+    position: relative;
 }
 
-.banner2 p {
-    position: absolute;
-    top: 330px;
-    left: 270px;
-}
+    .banner2 h2 {
+        position: absolute;
+        top: 100px;
+        left: 600px;
+    }
 
-.banner2 button {
-    position: absolute;
-    top: 450px;
-    left: 270px;
-    background-color: #9acd32;
-    width: 130px;
-    height: 40px;
-    border: none;
-}
+    .banner2 p {
+        position: absolute;
+        top: 330px;
+        left: 270px;
+    }
+
+    .banner2 button {
+        position: absolute;
+        top: 450px;
+        left: 270px;
+        background-color: #9acd32;
+        width: 130px;
+        height: 40px;
+        border: none;
+        color: black;
+    }
 
 .banner3 {
     position: relative;
 }
-.spnoibat h2, .nghenhan h2 {
-    margin-left: 600px;
+
+.nghenhan h2 {
+    margin-left: 550px;
 }
+
+.sp {
+    width: 1000px;
+    height: 500px;
+}
+
 /*---Css slider--*/
 
 .mySlides3 {
     display: none;
-    margin-left:60px;
+    margin-left: 60px;
 }
 
 .display-container {
@@ -133,7 +214,6 @@ textarea {
 .badge-white {
     color: #9acd32 !important;
     background-color: #9acd32 !important;
-
 }
 
 .image-badge {
@@ -150,28 +230,37 @@ textarea {
 
 .nghenhan {
     background-image: url('../Pictures/trang-chu/bannernghenhan.png');
-    width :1450px;
-    height:500px;
+    width: 1450px;
+    height: 500px;
 }
-.row{
+
+.row {
     margin-left: 100px;
-    display:flex;
-    text-align:center;
-    justify-content:center;
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
 }
+
 .anhnn {
     display: inline;
-    
+    padding-left: 20px;
 }
-.anhnn img {
-        width :180px;
-        height:180px;
-        margin-top:10px;
-        margin-left:2px;
+
+    .anhnn p {
+        font-size: 13px;
     }
+
+    .anhnn img {
+        width: 180px;
+        height: 180px;
+        margin-top: 10px;
+        margin-left: 2px;
+    }
+
 .banner4 img {
     margin-left: 60px;
 }
+
 .banner4 {
     position: relative;
 }
@@ -184,17 +273,24 @@ textarea {
 
     .banner4 input {
         position: absolute;
-        top: 150px;
-        left: 270px;
-        width:2000px;
+        top: 170px;
+        left: 350px;
+        color: black;
+        height: 50px;
         border: 2px solid #9acd32;
     }
-.banner4 button {
-    position: absolute;
-    top: 150px;
-    left: 700px;
-    background-color: #9acd32;
-    width: 130px;
-    height: 40px;
-    border: none;
+
+    .banner4 button {
+        position: absolute;
+        top: 170px;
+        left: 800px;
+        background-color: #9acd32;
+        width: 130px;
+        height: 40px;
+        border: none;
+        color: black;
+    }
+
+.carousel slide carousel-fade {
+    display: inline;
 }

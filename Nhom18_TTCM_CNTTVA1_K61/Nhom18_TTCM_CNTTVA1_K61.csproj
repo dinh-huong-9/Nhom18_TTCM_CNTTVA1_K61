@@ -211,11 +211,10 @@
     <Content Include="fonts\MULI-SEMIBOLD.TTF" />
     <Content Include="fonts\SVN-Artful Beauty.ttf" />
     <Content Include="fonts\SVN-Athena_0.ttf" />
-    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.4.1.js" />
-    <Content Include="Scripts\jquery-3.4.1.min.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -224,6 +223,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="slick\ajax-loader.gif" />
     <Content Include="slick\fonts\slick.svg" />
+    <Content Include="slick\scripts.js" />
     <Content Include="slick\slick-theme.css" />
     <Content Include="slick\slick.css" />
     <Content Include="slick\slick.js" />
@@ -250,6 +250,7 @@
     <Content Include="slick\slick-theme.scss" />
     <Content Include="slick\slick.less" />
     <Content Include="slick\slick.scss" />
+    <Content Include="Views\Home\Introduce.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -265,8 +266,6 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

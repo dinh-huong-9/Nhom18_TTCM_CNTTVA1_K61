@@ -15,15 +15,18 @@ namespace Nhom18_TTCM_CNTTVA1_K61.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
+          
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
+       
+            return View();
+        }
+        public ActionResult Introduce()
+        {
+        
             return View();
         }
     }
