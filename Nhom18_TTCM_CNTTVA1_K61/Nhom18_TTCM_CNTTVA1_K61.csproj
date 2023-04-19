@@ -251,6 +251,7 @@
     <Content Include="slick\slick.less" />
     <Content Include="slick\slick.scss" />
     <Content Include="Views\Home\Introduce.cshtml" />
+    <Content Include="Views\Home\Product.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

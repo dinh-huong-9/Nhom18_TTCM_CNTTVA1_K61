@@ -29,5 +29,10 @@ namespace Nhom18_TTCM_CNTTVA1_K61.Controllers
         
             return View();
         }
+        public ActionResult Product()
+        {
+
+            return View();
+        }
     }
 }
