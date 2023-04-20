@@ -18,75 +18,104 @@
 
     
 </head>
-    <body>
-        <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:white">
-            <div class="container" style="height:50px">
-                <div class="navbar-header" style="background-color:white">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <img class="navbar-brand" src="~/Pictures/trang-chu/logophongtra.png" width="200" height="80" style="padding:0" />
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav-stacked" style="float: right; font-family: slick; text-align: center; ">
-                        <li><a>@Html.ActionLink("TRANG CHỦ", "Index", "Home")</a></li>
-                        <li>@Html.ActionLink("GIỚI THIỆU", "Introduce", "Home")</li>
-                        <li>@Html.ActionLink("SẢN PHẨM", "Product", "Home")</li>
-                        <li>@Html.ActionLink("TIN TỨC", "About", "Home")</li>
-                        <li>@Html.ActionLink("LIÊN HỆ", "Contact", "Home")</li>
-                    </ul>
-                </div>
+<body>
+
+    @{
+        var u = Session["use"] as Nhom18_TTCM_CNTTVA1_K61.Models.User;
+    }
+    <div class="top_header col-md-12">
+
+        <div class="row">
+          
+            <div class="col-sm-4 col-md-0" style="font-size:large">Xin Chào!</div>                   
+            @{
+                if (u != null)
+                {
+                    <div class="col-sm-4 col-md-0">
+                        Xin chào : @u.Email
+                        &nbsp;                       
+                        <a style="color:red" href="/User/DangXuat"> ĐĂNG XUẤT</a>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-sm-4 col-md-0">
+                        &nbsp;
+                        <a style="color:black" href="/User/Dangnhap"> Đăng nhập</a>
+                    </div>
+                }
+            }
+        </div>
+
+    </div>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:white">
+        <div class="container" style="height:50px">
+            <div class="navbar-header" style="background-color:white">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class="navbar-brand" src="~/Pictures/trang-chu/logophongtra.png" width="200" height="80" style="padding:0" />
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav-stacked" style="float: right; font-family: slick; text-align: center; ">
+                    <li><a>@Html.ActionLink("TRANG CHỦ", "Index", "Home")</a></li>
+                    <li>@Html.ActionLink("GIỚI THIỆU", "Introduce", "Home")</li>
+                    <li>@Html.ActionLink("SẢN PHẨM", "Product", "Home")</li>
+                    <li>@Html.ActionLink("TIN TỨC", "About", "Home")</li>
+                    <li>@Html.ActionLink("LIÊN HỆ", "Contact", "Home")</li>
+                </ul>
             </div>
         </div>
+    </div>
 
 
-        <div class=" body-content">
-            @RenderBody()
-        </div>
-        <div>
-            <footer class="footer">
-                <img class="img_footer" src="~/Pictures/trang-chu/fotter.png" width="1500" height="200" />
-                <div class="row" style="font-family: thin; font-size:17px; color:black">
-                    <div class="col-md-3">
-                        <img class="navbar-brand" src="~/Pictures/trang-chu/logophongtra.png" width="200" height="80" style="padding:0" />
-                        <ul style="padding-top:60px">
-                            <li>7999-9999-9999</li>
-                            <li>trasenbachdiep@gmail.com</li>
-                            <li> Số 12 Quảng An, Tây Hồ,Hà Nội</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <h2 style="margin-left:40px">Về Chúng Tôi </h2>
-                        <ul>
-                            <li>Giới thiệu</li>
-                            <li>Sản phẩm</li>
-                            <li> Tin tức</li>
-                        </ul>
-
-                    </div>
-                    <div class="col-md-3">
-                        <h2 style="margin-left:40px">Liên Hệ</h2>
-                        <i class="fa fa-youtube"></i>
-                        <i class="fa fa-instagram"></i>
-                        <i class="fa fa-facebook"></i>
-                        <ul style="font-family: 'SVN-Athena_0'">
-
-                            <li>Coppyright  2019-2020</li>
-                            <li>Tra Sen Bach Diep. All rights reserved</li>
-                        </ul>
-
-                    </div>
+    <div class=" body-content">
+        @RenderBody()
+    </div>
+    <div>
+        <footer class="footer">
+            <img class="img_footer" src="~/Pictures/trang-chu/fotter.png" width="1500" height="200" />
+            <div class="row" style="font-family: thin; font-size:17px; color:black">
+                <div class="col-md-3">
+                    <img class="navbar-brand" src="~/Pictures/trang-chu/logophongtra.png" width="200" height="80" style="padding:0" />
+                    <ul style="padding-top:60px">
+                        <li>7999-9999-9999</li>
+                        <li>trasenbachdiep@gmail.com</li>
+                        <li> Số 12 Quảng An, Tây Hồ,Hà Nội</li>
+                    </ul>
                 </div>
-            </footer>
+                <div class="col-md-3">
+                    <h2 style="margin-left:40px">Về Chúng Tôi </h2>
+                    <ul>
+                        <li>Giới thiệu</li>
+                        <li>Sản phẩm</li>
+                        <li> Tin tức</li>
+                    </ul>
 
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
+                </div>
+                <div class="col-md-3">
+                    <h2 style="margin-left:40px">Liên Hệ</h2>
+                    <i class="fa fa-youtube"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-facebook"></i>
+                    <ul style="font-family: 'SVN-Athena_0'">
 
-    </body>
+                        <li>Coppyright  2019-2020</li>
+                        <li>Tra Sen Bach Diep. All rights reserved</li>
+                    </ul>
+
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
 </html>

@@ -1,0 +1,99 @@
+﻿@model Nhom18_TTCM_CNTTVA1_K61.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDcategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDcategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDtools)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDtools)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDtrademark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDtrademark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Instruct)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Instruct)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageTool)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageTool)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Idproduct }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

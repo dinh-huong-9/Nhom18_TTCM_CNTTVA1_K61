@@ -1,0 +1,59 @@
+﻿@model Nhom18_TTCM_CNTTVA1_K61.Models.News
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>News</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Namecontent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Namecontent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Imagecontent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Imagecontent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descrition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descrition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content2)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDcontent }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

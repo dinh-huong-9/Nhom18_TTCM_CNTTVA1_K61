@@ -1,9 +1,10 @@
-﻿@*@model Nhom18_TTCM_CNTTVA1_K61.Models.LoginModel
+﻿@model Nhom18_TTCM_CNTTVA1_K61.Models.LoginModel
 @{
     Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 style="margin-left:100px"><b>Hãy đăng nhập để sử dụng đầy đủ tính năng của Website</b></h2>
+<h2 style="margin-left:100px"><b>Hãy đăng nhập</b></h2>
 
 @using (Html.BeginForm("Dangnhap", "User", FormMethod.Post))
 {
@@ -38,4 +39,4 @@
 
 <div style="margin-left:600px">
     @Html.ActionLink("Back to List", "Index")
-</div>*@
+</div>

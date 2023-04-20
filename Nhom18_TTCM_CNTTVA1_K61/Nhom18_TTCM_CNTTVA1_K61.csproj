@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,13 +46,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BinbinComponentModelDataAnnotations, Version=1.0.1.29776, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BinbinComponentModelDataAnnotations.1.0.1.29776\lib\net40\BinbinComponentModelDataAnnotations.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -128,6 +138,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -136,6 +149,7 @@
     <Compile Include="Models\Category.cs">
       <DependentUpon>QLtra.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\News.cs">
       <DependentUpon>QLtra.tt</DependentUpon>
     </Compile>
@@ -172,10 +186,48 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Assets\.gitignore" />
+    <Content Include="Areas\Assets\dist\401.html" />
+    <Content Include="Areas\Assets\dist\404.html" />
+    <Content Include="Areas\Assets\dist\500.html" />
+    <Content Include="Areas\Assets\dist\assets\demo\chart-area-demo.js" />
+    <Content Include="Areas\Assets\dist\assets\demo\chart-bar-demo.js" />
+    <Content Include="Areas\Assets\dist\assets\demo\chart-pie-demo.js" />
+    <Content Include="Areas\Assets\dist\assets\demo\datatables-demo.js" />
+    <Content Include="Areas\Assets\dist\assets\img\error-404-monochrome.svg" />
+    <Content Include="Areas\Assets\dist\charts.html" />
+    <Content Include="Areas\Assets\dist\css\styles.css" />
+    <Content Include="Areas\Assets\dist\index.html" />
+    <Content Include="Areas\Assets\dist\js\scripts.js" />
+    <Content Include="Areas\Assets\dist\layout-sidenav-light.html" />
+    <Content Include="Areas\Assets\dist\layout-static.html" />
+    <Content Include="Areas\Assets\dist\login.html" />
+    <Content Include="Areas\Assets\dist\password.html" />
+    <Content Include="Areas\Assets\dist\register.html" />
+    <Content Include="Areas\Assets\dist\tables.html" />
+    <Content Include="Areas\Assets\scripts\build-assets.js" />
+    <Content Include="Areas\Assets\scripts\build-pug.js" />
+    <Content Include="Areas\Assets\scripts\build-scripts.js" />
+    <Content Include="Areas\Assets\scripts\build-scss.js" />
+    <Content Include="Areas\Assets\scripts\clean.js" />
+    <Content Include="Areas\Assets\scripts\render-assets.js" />
+    <Content Include="Areas\Assets\scripts\render-pug.js" />
+    <Content Include="Areas\Assets\scripts\render-scripts.js" />
+    <Content Include="Areas\Assets\scripts\render-scss.js" />
+    <Content Include="Areas\Assets\scripts\sb-watch.js" />
+    <Content Include="Areas\Assets\scripts\start-debug.js" />
+    <Content Include="Areas\Assets\scripts\start.js" />
+    <Content Include="Areas\Assets\src\assets\demo\chart-area-demo.js" />
+    <Content Include="Areas\Assets\src\assets\demo\chart-bar-demo.js" />
+    <Content Include="Areas\Assets\src\assets\demo\chart-pie-demo.js" />
+    <Content Include="Areas\Assets\src\assets\demo\datatables-demo.js" />
+    <Content Include="Areas\Assets\src\assets\img\error-404-monochrome.svg" />
+    <Content Include="Areas\Assets\src\js\scripts.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -291,6 +343,62 @@
     <Content Include="Models\QLtra.edmx.diagram">
       <DependentUpon>QLtra.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\Assets\.browserslistrc" />
+    <Content Include="Areas\Assets\.travis.yml" />
+    <Content Include="Areas\Assets\LICENSE" />
+    <Content Include="Areas\Assets\package-lock.json" />
+    <Content Include="Areas\Assets\package.json" />
+    <Content Include="Areas\Assets\README.md" />
+    <Content Include="Areas\Assets\src\pug\layouts\authentication.pug" />
+    <Content Include="Areas\Assets\src\pug\layouts\dashboard.pug" />
+    <Content Include="Areas\Assets\src\pug\layouts\error.pug" />
+    <Content Include="Areas\Assets\src\pug\layouts\includes\footer.pug" />
+    <Content Include="Areas\Assets\src\pug\layouts\includes\head\css.pug" />
+    <Content Include="Areas\Assets\src\pug\layouts\includes\head\icons.pug" />
+    <Content Include="Areas\Assets\src\pug\layouts\includes\head\meta.pug" />
+    <Content Include="Areas\Assets\src\pug\layouts\includes\head\title.pug" />
+    <Content Include="Areas\Assets\src\pug\layouts\includes\navigation\sidenav.pug" />
+    <Content Include="Areas\Assets\src\pug\layouts\includes\navigation\topnav.pug" />
+    <Content Include="Areas\Assets\src\pug\layouts\includes\scripts.pug" />
+    <Content Include="Areas\Assets\src\pug\pages\401.pug" />
+    <Content Include="Areas\Assets\src\pug\pages\404.pug" />
+    <Content Include="Areas\Assets\src\pug\pages\500.pug" />
+    <Content Include="Areas\Assets\src\pug\pages\charts.pug" />
+    <Content Include="Areas\Assets\src\pug\pages\includes\datatable.pug" />
+    <Content Include="Areas\Assets\src\pug\pages\includes\page-header.pug" />
+    <Content Include="Areas\Assets\src\pug\pages\index.pug" />
+    <Content Include="Areas\Assets\src\pug\pages\layout-sidenav-light.pug" />
+    <Content Include="Areas\Assets\src\pug\pages\layout-static.pug" />
+    <Content Include="Areas\Assets\src\pug\pages\login.pug" />
+    <Content Include="Areas\Assets\src\pug\pages\password.pug" />
+    <Content Include="Areas\Assets\src\pug\pages\register.pug" />
+    <Content Include="Areas\Assets\src\pug\pages\tables.pug" />
+    <Content Include="Areas\Assets\src\scss\layout\_authentication.scss" />
+    <Content Include="Areas\Assets\src\scss\layout\_dashboard-default.scss" />
+    <Content Include="Areas\Assets\src\scss\layout\_dashboard-fixed.scss" />
+    <Content Include="Areas\Assets\src\scss\layout\_error.scss" />
+    <Content Include="Areas\Assets\src\scss\navigation\sidenav\_sidenav-dark.scss" />
+    <Content Include="Areas\Assets\src\scss\navigation\sidenav\_sidenav-light.scss" />
+    <Content Include="Areas\Assets\src\scss\navigation\sidenav\_sidenav.scss" />
+    <Content Include="Areas\Assets\src\scss\navigation\_nav.scss" />
+    <Content Include="Areas\Assets\src\scss\navigation\_topnav.scss" />
+    <Content Include="Areas\Assets\src\scss\styles.scss" />
+    <Content Include="Areas\Assets\src\scss\variables\_navigation.scss" />
+    <Content Include="Areas\Assets\src\scss\variables\_spacing.scss" />
+    <Content Include="Areas\Assets\src\scss\_global.scss" />
+    <Content Include="Areas\Assets\src\scss\_variables.scss" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Delete.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
@@ -338,6 +446,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Views\LoginModel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -386,7 +496,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

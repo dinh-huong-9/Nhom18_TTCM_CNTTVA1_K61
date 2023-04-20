@@ -1,0 +1,65 @@
+﻿@model Nhom18_TTCM_CNTTVA1_K61.Models.News
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Xóa Sản Phẩm</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>News</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Namecontent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Namecontent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Imagecontent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Imagecontent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descrition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descrition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content2)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
