@@ -1,0 +1,72 @@
+﻿@using Nhom18_TTCM_CNTTVA1_K61.Models
+@model Product
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .back1 img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        margin-left: 80px;
+    }
+
+    .ctsp {
+        top: 200px;
+        position: absolute;
+        display: flex;
+    }
+    .hdpha {
+        top: 700px;
+        position: absolute;
+        display: flex;
+        margin-left:100px;
+    }
+    .chitiet {
+        margin-left: 160px;
+    }
+</style>
+<div class="back1">
+    <img src="~/Pictures/chitietsanpham/bg-chitiet.jpg" />
+</div>
+<div class="container">
+    <div class="ctsp">
+        <div>
+            <img src=@Url.Content("~/Pictures/"+@Model.Image) width="450" height="450" />
+        </div>
+        <div class="chitiet">
+            <h1>@Model.Name</h1>
+            <div class="rating" style="display: flex">
+                <i style="color: #9acd32" class="fa fa-star"></i>
+                <i style="color: #9acd32" class="fa fa-star"></i>
+                <i style="color: #9acd32" class="fa fa-star"></i>
+                <i style="color: #9acd32" class="fa fa-star"></i>
+                <i style="color: #9acd32" class="fa fa-star"></i>
+
+            </div>
+            <div class="product__price" style="display:flex">
+                <div>@Model.Price VND</div>
+                <select name="cars" id="cars" style="margin-left:50px">
+                    <option value="volvo">@Model.quantity</option>
+                </select>
+            </div>
+            <h2>SẢN PHẨM ĐẠT CHUẨN VỆ SINH AN TOÀN THỰC PHẨM</h2>
+            <p>@Model.Description</p>
+        </div>
+    </div>
+
+    <div class="hdpha">
+        <div>
+            <h2>Hướng dẫn pha @Model.Name</h2>
+            <pre>@Model.Instruct</pre>
+        </div>
+        <div style="margin-left:200px">
+            <img src=@Url.Content("~/Pictures/"+@Model.ImageTool) width="450" height="450"/>
+        </div>
+    </div>
+   
+
+</div>
+
+
