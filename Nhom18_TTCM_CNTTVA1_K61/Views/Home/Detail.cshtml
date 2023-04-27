@@ -24,7 +24,7 @@
         margin-left:100px;
     }
     .chitiet {
-        margin-left: 160px;
+        margin-left: 100px;
     }
 </style>
 <div class="back1">
@@ -35,30 +35,33 @@
         <div>
             <img src=@Url.Content("~/Pictures/"+@Model.Image) width="450" height="450" />
         </div>
-        <div class="chitiet">
+        <div class="chitiet" style="font-family: 'Global Serif'">
             <h1>@Model.Name</h1>
+            <br />
             <div class="rating" style="display: flex">
                 <i style="color: #9acd32" class="fa fa-star"></i>
                 <i style="color: #9acd32" class="fa fa-star"></i>
                 <i style="color: #9acd32" class="fa fa-star"></i>
                 <i style="color: #9acd32" class="fa fa-star"></i>
                 <i style="color: #9acd32" class="fa fa-star"></i>
-
             </div>
+            <br />
             <div class="product__price" style="display:flex">
                 <div>@Model.Price VND</div>
                 <select name="cars" id="cars" style="margin-left:50px">
                     <option value="volvo">@Model.quantity</option>
                 </select>
             </div>
-            <h2>SẢN PHẨM ĐẠT CHUẨN VỆ SINH AN TOÀN THỰC PHẨM</h2>
-            <p>@Model.Description</p>
+            <br />
+            <div style="width:330px;font-size:20px"><b>SẢN PHẨM ĐẠT CHUẨN VỆ SINH AN TOÀN THỰC PHẨM</b></div>
+            <br />
+            <div style="width:500px;font-size:18px">@Model.Description</div>
         </div>
     </div>
 
     <div class="hdpha">
         <div>
-            <h2>Hướng dẫn pha @Model.Name</h2>
+            <h2 style="font-family: 'Global Serif'">Hướng dẫn pha <br/> @Model.Name</h2>
             <pre>@Model.Instruct</pre>
         </div>
         <div style="margin-left:200px">

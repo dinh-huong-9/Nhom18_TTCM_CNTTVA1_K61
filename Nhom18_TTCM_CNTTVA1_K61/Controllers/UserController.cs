@@ -8,21 +8,12 @@ namespace Nhom18_TTCM_CNTTVA1_K61.Controllers
 {
     public class UserController : Controller
     {
-        // GET: User
         QLtrasenEntities db = new QLtrasenEntities();
-        
-        // ĐĂNG KÝ
-      
-
-        // ĐĂNG KÝ PHƯƠNG THỨC POST
-        [HttpPost]
-
+        // GET: User
         public ActionResult Dangnhap()
         {
             return View();
-
         }
-
         [HttpPost]
         public ActionResult Dangnhap(FormCollection userlog)
         {

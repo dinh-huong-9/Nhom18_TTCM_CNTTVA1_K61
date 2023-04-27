@@ -4,44 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Nhom18_TTCM_CNTTVA1_K61.Models;
-
 namespace Nhom18_TTCM_CNTTVA1_K61.Controllers
 {
-    public class HomeController : Controller
+    public class NewsController : Controller
     {
         QLtrasenEntities db = new QLtrasenEntities();
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult About()
+        // GET: News
+        public ActionResult New()
         {
             List<News> bao = db.News.ToList();
             return PartialView(bao);
-           
-        }
-
-        public ActionResult Contact()
-        {
-       
-            return View();
-        }
-        public ActionResult Introduce()
-        {
-        
-            return View();
-        }
-        
-        public ActionResult Detail(string Idproduct)
-        {
-            var chitiet = db.Products.SingleOrDefault(n => n.Idproduct == Idproduct);
-            if (chitiet == null)
-            {
-                Response.StatusCode = 404;
-                return null;
-            }
-            return View(chitiet);
         }
         public ActionResult DetailNews(string IDcontent)
         {
@@ -53,7 +25,16 @@ namespace Nhom18_TTCM_CNTTVA1_K61.Controllers
             }
             return View(dcontent);
         }
-       
+        public ActionResult BVM(string IDcontent)
+        {
+            var dcontent = db.News.SingleOrDefault(n => n.IDcontent == IDcontent);
+            if (dcontent == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(dcontent);
+        }
 
     }
 }

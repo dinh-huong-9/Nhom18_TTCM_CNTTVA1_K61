@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Nhom18_TTCM_CNTTVA1_K61.Models.Tool>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h2>Quản Lý Dụng Cụ Pha Trà</h2>
+
+<p>
+    <button class="btn-default">@Html.ActionLink("Thêm mới", "Create")</button>
+</p>
+<table class="table table-bordered">
+    <tr>
+
+        <th>
+            Mã dụng cụ
+        </th>
+        <th>
+            Ảnh dụng cụ
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDtools)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Imagetools)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.IDtools })|
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.IDtools }) |
+                @Html.ActionLink("Xoá", "Delete", new { id = item.IDtools })
+            </td>
+        </tr>
+    }
+
+</table>
+

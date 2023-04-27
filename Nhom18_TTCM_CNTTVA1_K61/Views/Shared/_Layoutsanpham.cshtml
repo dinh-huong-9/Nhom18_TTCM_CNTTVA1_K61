@@ -1,0 +1,93 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .bannersp {
+        position: absolute;
+        margin-left: 650px;
+        top: 240px;
+        font-family: 'Global Serif';
+    }
+
+        .bannersp img {
+            width: 800px;
+            height: 300px;
+            object-fit: fill;
+            margin-left: 80px;
+        }
+</style>
+<div>
+    <h1 class="bannersp"><b>SẢN PHẨM</b></h1>
+    <img src="~/Pictures/san-pham/banner.png" />
+</div>
+<section class="shop spad">
+    <div class="container">
+        <h2 style="font-size: 40px; font-family: 'Global Serif';"><b>Sản Phẩm</b></h2>
+        <div style="display:flex">
+            <b>--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</b>
+            @*<select name="cars" id="cars" style="margin-left: 50px; font-family: 'Global Serif';">*@
+                
+                
+                @*<option value="volvo">Thứ tự mặc định</option>
+        <option value="saab">Giá từ thấp đến cao</option>
+        <option value="#">Giá từ cao đến thấp</option>*@
+            @*</select>*@
+        </div>
+        <div class="row" style="font-family: 'Global Serif'">
+            <div class="col-lg-4 col-md-3">
+                <div class="shop__sidebar">
+                    <div class="sidebar__categories">
+                        <div class="section-title">
+                            <h5 style="font-size:16px">Bộ lọc sản phẩm</h5>
+                            <p style="font-family: 'Global Serif';font-size:20px"><b>Loại sản phẩm</b></p>
+                        </div>
+                        <div class="categories__accordion" style="font-family: 'Global Serif'">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-heading active">
+                                            <ul style="list-style: none; display: inline">
+                                                @Html.Action("Category", "SanPham")
+                                            </ul>                                                                                   
+                                            @*<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+        <label for="vehicle1"> Trà xanh Thái Nguyên</label><br>
+        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+        <label for="vehicle1"> Trà xanh Thái Nguyên</label><br>*@                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar__filter">
+                        <div class="section-title">
+                            <p style="font-family: 'Global Serif';font-size:20px"><b>Giá thành</b></p>
+                            <p>Từ 50.000 đến 200.000</p>
+                        </div>
+                    </div>
+                    <div class="sidebar__sizes">
+                        <div class="section-title">
+                            <p style="font-family: 'Global Serif';font-size:20px"><b>Thương Hiệu</b></p>
+                        </div>
+                        <div>
+                            <ul style="list-style: none; display: inline">
+                                @Html.Action("Trademark", "SanPham")
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p style="font-family: 'Global Serif';font-size:20px"><b>Sắp xếp</b></p>
+                        <ul style="list-style: none; display: inline"> @Html.Action("TTMD", "SanPham")</ul>
+                        <ul style="list-style: none; display: inline"> @Html.Action("sxtheogiact", "SanPham")</ul>
+                        <ul style="list-style: none; display: inline"> @Html.Action("sxtheogiatc", "SanPham")</ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+</section>
+

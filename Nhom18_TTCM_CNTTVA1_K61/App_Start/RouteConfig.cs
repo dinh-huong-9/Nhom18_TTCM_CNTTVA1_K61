@@ -16,7 +16,8 @@ namespace Nhom18_TTCM_CNTTVA1_K61
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                new[] { "Nhom18_TTCM_CNTTVA1_K61.Controllers" }
             );
         }
     }

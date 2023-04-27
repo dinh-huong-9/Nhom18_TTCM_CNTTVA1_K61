@@ -1,0 +1,22 @@
+﻿@using Nhom18_TTCM_CNTTVA1_K61.Models;
+@model List<News>
+@{
+    ViewBag.Title = "BVM";
+    Layout = "~/Views/News/DetailNews.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    <div style="margin-left:20px">
+        <h3 style="font-size: 24px; font-family: 'Global Serif'"><b>BÀI VIẾT MỚI</b></h3>
+        <div style="display:flex">
+            <a href="@Url.Action("DetailNews", new { @IDcontent = item.IDcontent })">
+                <img src=@Url.Content("~/Pictures/tin-tuc/" + @item.Imagecontent) width="70" height="70" />
+            </a>
+
+            <h5 style="font-family: 'Global Serif';margin-left:20px">@item.Namecontent</h5>
+        </div>
+
+    </div>
+}
+

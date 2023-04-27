@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Nhom18_TTCM_CNTTVA1_K61.Models.Category>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Quản Lý Loại Sản Phẩm</h2>
+
+<p>
+    <button class="btn-default">@Html.ActionLink("Thêm mới", "Create")</button>
+</p>
+<table class="table table-bordered">
+    <tr>
+
+        <th>
+            Mã Loại
+        </th>
+        <th>
+            Tên Loại
+        </th>     
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>                     
+            <td>
+                @Html.DisplayFor(modelItem => item.IDcategory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>          
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.IDcategory })|
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.IDcategory }) |
+                @Html.ActionLink("Xoá", "Delete", new { id = item.IDcategory })
+            </td>
+        </tr>
+    }
+
+</table>
+

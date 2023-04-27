@@ -1,0 +1,154 @@
+﻿@using Nhom18_TTCM_CNTTVA1_K61.Models
+@model Product
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .back1 img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        margin-left: 80px;
+    }
+
+    .ctsp {
+        top: 200px;
+        position: absolute;
+        display: flex;
+    }
+
+    .hdpha {
+        top: 700px;
+        position: absolute;
+        display: flex;
+        margin-left: 100px;
+    }
+
+    .chitiet {
+        margin-left: 100px;
+    }
+    .splq{
+        position:absolute;
+        top: 1500px;
+    }
+</style>
+<div class="back1">
+    <img src="~/Pictures/chitietsanpham/bg-chitiet.jpg" />
+</div>
+<div class="container">
+    <div class="ctsp">
+        <div>
+            <img src=@Url.Content("~/Pictures/"+@Model.Image) width="450" height="450" />
+        </div>
+        <div class="chitiet" style="font-family: 'Global Serif'">
+            <h1>@Model.Name</h1>
+            <br />
+            <div class="rating" style="display: flex">
+                <i style="color: #9acd32" class="fa fa-star"></i>
+                <i style="color: #9acd32" class="fa fa-star"></i>
+                <i style="color: #9acd32" class="fa fa-star"></i>
+                <i style="color: #9acd32" class="fa fa-star"></i>
+                <i style="color: #9acd32" class="fa fa-star"></i>
+            </div>
+            <br />
+            <div class="product__price" style="display:flex">
+                <div>@Model.Price VND</div>
+                <select name="cars" id="cars" style="margin-left:50px">
+                    <option value="volvo">@Model.quantity</option>
+                </select>
+            </div>
+            <br />
+            <div style="width:330px;font-size:20px"><b>SẢN PHẨM ĐẠT CHUẨN VỆ SINH AN TOÀN THỰC PHẨM</b></div>
+            <br />
+            <div style="width:500px;font-size:18px">@Model.Description</div>
+        </div>
+    </div>
+
+    <div class="hdpha">
+        <div>
+            <h2 style="font-family: 'Global Serif'">Hướng dẫn pha <br /> @Model.Name</h2>
+            <pre>@Model.Instruct</pre>
+        </div>
+        <div style="margin-left:200px">
+            <img src=@Url.Content("~/Pictures/"+@Model.ImageTool) width="450" height="450" />
+        </div>
+    </div>
+    <div class="splq">
+        <h2 style="font-family: 'Global Serif'; text-align:center"> Sản phẩm liên quan</h2>
+        <div class="row filtering">
+            <div class="col-md-4">
+                <div class="row ">
+                    <div class="wap-items-ss brbox">
+                        <div class="wap-ss-img">
+                            <img src="~/Pictures/tra_bup.png" />
+                        </div>
+                        <div class="text" style="font-family: 'Global Serif';font-size:17px;text-align:center">
+                            <div>Trà búp</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row ">
+                    <div class="wap-items-ss brbox">
+                        <div class="wap-ss-img">
+                            <img src="~/Pictures/tra_Oolong.png" />
+                        </div>
+                        <div class="text" style="font-family: 'Global Serif';font-size:17px;text-align:center">
+                            <div>Trà Olong</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row ">
+                    <div class="wap-items-ss brbox">
+                        <div class="wap-ss-img">
+                            <img src="~/Pictures/tra_bup.png" />
+                        </div>
+                        <div class="text" style="font-family: 'Global Serif';font-size:17px;text-align:center">
+                            <div>Trà Xanh</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row ">
+                    <div class="wap-items-ss brbox">
+                        <div class="wap-ss-img">
+                            <img src="~/Pictures/tra_shan_tuyet.png" />
+                        </div>
+                        <div class="text" style="font-family: 'Global Serif';font-size:17px;text-align:center">
+                            <div>Trà shan tuyết</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $('.filtering').slick({
+        slidesToShow: 4,
+        slidesToScroll: 4
+    });
+
+    var filtered = false;
+
+    $('.js-filter').on('click', function () {
+        if (filtered === false) {
+            $('.filtering').slick('slickFilter', ':even');
+            $(this).text('Unfilter Slides');
+            filtered = true;
+        } else {
+            $('.filtering').slick('slickUnfilter');
+            $(this).text('Filter Slides');
+            filtered = false;
+        }
+    });
+
+    </script>
+
+</div>
+

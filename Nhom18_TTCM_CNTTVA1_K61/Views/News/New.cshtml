@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Nhom18_TTCM_CNTTVA1_K61.Models;
+@model List<News>
+<h1 style="margin-left:650px;font-family:slick"><b>TIN TỨC</b></h1>
+<img class="anh" src="~/Pictures/tin-tuc/background-tintuc.png" />
+<style>
+    .anh {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        margin: 80px;
+        position: absolute;
+    }
+
+    .col-sm-4 h3 {
+        color: #9acd32;
+        font-family: 'Global Serif';
+        font-size: 18px;
+    }
+
+    .col-sm-4 p {
+        color: black;
+        font-family: 'Global Serif';
+        font-size: 14px;
+    }
+</style>
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-4">
+            <a href="@Url.Action("DetailNews", new { @IDcontent = item.IDcontent })">
+                <img src=@Url.Content("~/Pictures/tin-tuc/" + item.Imagecontent) width="250" height="200" />
+            </a>
+            <h3>@item.Namecontent</h3>
+            <p>
+                @item.Descrition
+            </p>
+        </div>
+    }
+    <style>
+        .col-lg-2 {
+            margin-left: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</div>
+
+
+
+

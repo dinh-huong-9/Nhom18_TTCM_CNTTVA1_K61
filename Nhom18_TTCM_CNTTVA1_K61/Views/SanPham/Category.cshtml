@@ -1,0 +1,11 @@
+﻿@using Nhom18_TTCM_CNTTVA1_K61.Models
+@model List<Category>
+@{
+
+    foreach (var item in Model)
+    {
+        <li style="margin-bottom:10px;font-size:17px; "><a href="@Url.Action("ProductByCategory","SanPham", new {@IDcategory=item.IDcategory})" style="color: black">@item.Name</a></li>
+    }
+
+}
+

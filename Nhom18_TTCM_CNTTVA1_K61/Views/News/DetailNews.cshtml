@@ -1,9 +1,10 @@
-﻿@using Nhom18_TTCM_CNTTVA1_K61.Models
-@model News
-@{
+﻿@{
     ViewBag.Title = "DetailNews";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@using Nhom18_TTCM_CNTTVA1_K61.Models;
+@model News
 <style>
     .back2 {
         width: 100%;
@@ -11,10 +12,11 @@
         object-fit: fill;
         margin: 80px;
     }
-    .tintuc{
-        position:absolute;
-        top:100px;
-        margin-left:280px;
+
+    .tintuc {
+        position: absolute;
+        top: 100px;
+        margin-left: 280px;
     }
 </style>
 <img class="back2" src="~/Pictures/bai-viet/background.jpg" />
@@ -22,7 +24,7 @@
     <div style="width:800px">
         <div>
             <h2 style="font-family: 'Global Serif'; color: #9acd32">@Model.Namecontent</h2>
-            <br/>
+            <br />
         </div>
         <div>
             <h4 style="font-family: 'Global Serif'; font-size:17px;">@Model.Content</h4>
@@ -32,18 +34,16 @@
             <h4 style="font-family: 'Global Serif'; font-size:17px;">@Model.Content2</h4>
         </div>
     </div>
-
     <div style="margin-left:20px">
         <h3 style="font-size: 24px; font-family: 'Global Serif'"><b>BÀI VIẾT MỚI</b></h3>
-        <div style="display:flex">
-            <a href="@Url.Action("DetailNews", new { @IDcontent = Model.IDcontent })">
-                <img src=@Url.Content("~/Pictures/tin-tuc/" + Model.Imagecontent) width="70" height="70" />
-            </a>
-           
+        <div style="display:flex">            
+                <img src=@Url.Content("~/Pictures/tin-tuc/" + Model.Imagecontent) width="70" height="70" />          
             <h5 style="font-family: 'Global Serif';margin-left:20px">@Model.Namecontent</h5>
         </div>
-       
+
     </div>
 </div>
+
+
 
 

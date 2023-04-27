@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Nhom18_TTCM_CNTTVA1_K61.Models.Trademark>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Quản Lý Thương Hiệu</h2>
+
+<p>
+    <button class="btn-default">@Html.ActionLink("Thêm mới", "Create")</button>
+</p>
+<table class="table table-bordered">
+    <tr>
+
+        <th>
+            Mã Thương Hiệu
+        </th>
+        <th>
+            Tên Thương Hiệu
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDtrademark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.IDtrademark })|
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.IDtrademark }) |
+                @Html.ActionLink("Xoá", "Delete", new { id = item.IDtrademark })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+

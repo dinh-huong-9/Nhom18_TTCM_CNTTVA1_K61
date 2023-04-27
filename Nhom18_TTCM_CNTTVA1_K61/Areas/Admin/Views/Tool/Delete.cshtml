@@ -1,0 +1,33 @@
+﻿@model Nhom18_TTCM_CNTTVA1_K61.Models.Tool
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Xóa dụng cụ</h2>
+
+<h3>BẠn chắc chắn muốn xóa?</h3>
+<div>
+    <h4>Tool</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Imagetools)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Imagetools)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

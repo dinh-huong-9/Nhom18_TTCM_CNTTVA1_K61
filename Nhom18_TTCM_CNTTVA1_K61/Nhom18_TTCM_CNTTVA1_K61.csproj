@@ -139,9 +139,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ToolController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TrademarkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\SanPhamController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -399,6 +404,21 @@
     <Content Include="Areas\Admin\Views\News\Create.cshtml" />
     <Content Include="Areas\Admin\Views\News\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\News\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Tool\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Tool\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Tool\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Tool\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Tool\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Trademark\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Trademark\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Trademark\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Trademark\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Trademark\Delete.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
@@ -438,16 +458,32 @@
     <Content Include="slick\slick.less" />
     <Content Include="slick\slick.scss" />
     <Content Include="Views\Home\Introduce.cshtml" />
-    <Content Include="Views\User\Dangnhap.cshtml" />
-    <Content Include="Views\Home\Product.cshtml" />
     <Content Include="Views\Home\Detail.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\DetailNews.cshtml" />
+    <Content Include="Views\User\Dangnhap.cshtml" />
+    <Content Include="Views\SanPham\Product.cshtml" />
+    <Content Include="Views\Shared\_Layoutsanpham.cshtml" />
+    <Content Include="Views\SanPham\ProductByCategory.cshtml" />
+    <Content Include="Views\SanPham\Category.cshtml" />
+    <Content Include="Views\SanPham\Detail.cshtml" />
+    <Content Include="Views\SanPham\Trademark.cshtml" />
+    <Content Include="Views\SanPham\ProductByTrademark.cshtml" />
+    <Content Include="Views\SanPham\TTMD.cshtml" />
+    <Content Include="Views\SanPham\SpTTMD.cshtml" />
+    <Content Include="Views\News\New.cshtml" />
+    <Content Include="Views\News\DetailNews.cshtml" />
+    <Content Include="Views\News\BVM.cshtml" />
+    <Content Include="Views\SanPham\sxtheogiact.cshtml" />
+    <Content Include="Views\SanPham\sptheogiact.cshtml" />
+    <Content Include="Views\SanPham\sxtheogiatc.cshtml" />
+    <Content Include="Views\SanPham\sptheogiatc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Views\LoginModel\" />
+    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

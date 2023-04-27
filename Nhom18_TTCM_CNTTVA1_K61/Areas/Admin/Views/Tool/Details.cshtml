@@ -1,0 +1,27 @@
+﻿@model Nhom18_TTCM_CNTTVA1_K61.Models.Tool
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chi Tiết Dụng Cụ</h2>
+
+<div>
+    <h4>Dụng cụ</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Imagetools)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Imagetools)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDtools }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

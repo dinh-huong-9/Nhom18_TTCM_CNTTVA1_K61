@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "SpTTMD";
+    Layout = "~/Views/Shared/_Layoutsanpham.cshtml";
+}
+
+
+
+@using Nhom18_TTCM_CNTTVA1_K61.Models;
+@model List<Product>
+
+
+@foreach (var item in Model)
+{
+    <div class="col-lg-4" style="margin-top:20px;">
+        <div class="product__item">
+            <div class="product__item__pic set-bg">
+
+                <div class="rating" style="display: flex">
+                    <i style="color: #9acd32" class="fa fa-star"></i>
+                    <i style="color: #9acd32" class="fa fa-star"></i>
+                    <i style="color: #9acd32" class="fa fa-star"></i>
+                    <i style="color: #9acd32" class="fa fa-star"></i>
+                    <i style="color: #9acd32" class="fa fa-star"></i>
+                    <div class="label new" style="background-color: #9acd32; margin-left: 90px">NEW</div>
+                </div>
+            </div>
+            <div class="product__item__text">
+                <a href="@Url.Action("Detail", new {@Idproduct=item.Idproduct })">
+                    <img src=@Url.Content("~/Pictures/" + item.Image) width="200" height="200" />
+                </a>
+
+                <h3>@item.Name</h3>
+                <div class="product__price" style="display:flex">
+                    <div>@item.Price VND</div>
+
+                    <select name="cars" id="cars" style="margin-left:50px">
+                        <option value="volvo">@item.quantity g</option>
+                        @*<option value="saab">200g</option>*@
+                    </select>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+

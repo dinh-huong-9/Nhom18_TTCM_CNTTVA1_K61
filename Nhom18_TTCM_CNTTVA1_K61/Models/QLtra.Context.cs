@@ -32,5 +32,7 @@ namespace Nhom18_TTCM_CNTTVA1_K61.Models
         public virtual DbSet<Tool> Tools { get; set; }
         public virtual DbSet<Trademark> Trademarks { get; set; }
         public virtual DbSet<User> Users { get; set; }
+
+        public System.Data.Entity.DbSet<Nhom18_TTCM_CNTTVA1_K61.Models.LoginModel> LoginModels { get; set; }
     }
 }
